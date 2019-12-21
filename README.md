@@ -1,1 +1,2 @@
 # Projet8
+Ce projet permet de créer une plateforme web basée sur les données d'Openfoodfacts (https://fr.openfoodfacts.org). Elle permet de naviguer entre différents produits, de leurs trouver des alternatives et de sauvegarder ces alternatives. Si vous souhaitez l'utiliser, vous devez suivre les étapes suivantes :
