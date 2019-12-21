@@ -134,6 +134,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
     STATICFILES_DIRS = (
         os.path.join(PROJECT_ROOT, 'static'),
     )
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #Ces liens sont à rajouter pour gérer les chemins automatiques de déconnexion
 LOGIN_REDIRECT_URL = '/'
