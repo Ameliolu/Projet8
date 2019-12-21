@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/creative.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/customcss.css' %}" rel="stylesheet">
+    <link href="{% static 'fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">        
+        <div class="container-fluid">
+        
+        <ul class="nav-header">
+            <a href="{% url 'accueil' %}">
+                <img src="{% static 'img/logo_pur_beurre.png' %}" height="30">
+                Pur Beurre
+            </a>
+        </ul>
+             
+            
+            <!-- <ul class="navbar-right inline-form"> -->
+            <!-- <ul class="nav navbar-nav navbar-right"> -->
+            <ul class="navbar-nav ml-auto">
+            
+                <!-- Barre de rechercher -->
+                <li class="nav-item my-auto mx-auto">
+                    <form action="{% url 'search'%}" class="form-inline" method="GET">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Chercher" name="product" required>      
+                        </div>
+                    </form>              
+                </li>
+                
+                <!-- Compte utilisateur -->
+                {% if user.is_authenticated %}
+                <li class="nav-item my-auto mx-auto">
+                    <a href="{% url 'accounts' %}"><i class="fa fa-user" title="Mon compte"></i></a>
+                </li>
+                
+                <li class="nav-item my-auto mx-auto">
+                    <a href="{% url 'choix' %}"><i class="fas fa-carrot" title="Mes aliments"></i></a>
+                </li>
+                
+                <li class="nav-item my-auto mx-auto">
+                    <a href="{% url 'deconnexion' %}" id="deconnexion"><i class="fas fa-sign-out-alt" title="Se déconnecter"></i></a>
+                </li>
+                
+                {% else %}
+                <li>
+                    <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt" title="Me connecter"></i></a>
+                </li>
+                    
+                <li>
+                    <a href="{% url 'signup' %}">S'enregister ?</a>
+                </li>
+                {% endif %}
+            
+            </ul>  
+        
+        </div>    
+    </nav>
+
+{% block content %}{% endblock %}
+
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <a href="/legal/">Mentions légales</a>
+            </div>
+            <div class="col-lg-6 text-center">
+                <a href="/#contact" class="js-scroll-trigger">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'jquery/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- Custom script -->
+<script src="{% static 'js/creative.min.js' %}"></script>
+
+</body>
+    
+</html>

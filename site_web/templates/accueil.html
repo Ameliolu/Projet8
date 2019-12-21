@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Le header qui résume le concept du site -->
+<header>
+    <img src="{% static 'img/kawin-harasai-unsplash.jpg' %}" alt="" style="width:100%;" class="image_accueil">
+    <div class="row">
+        <div class="col-lg-12 mx-auto text-center superposition" id="texte_accueil">
+            <h1>Du gras, oui, mais de qualité!</h1>
+            <h2>Trouvez un produit de substitution pour ceux que vous consommez tous les jours.</h2>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-4 mx-auto text-center superposition_barre">
+            <form action="{% url 'search'%}" method="GET">
+            <div class="input-group">
+            <input type="text" class="form-control" placeholder="Chercher" name="product" required>
+            <button type="submit" class="btn btn-primary">Chercher</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+</header>
+
+<!-- La section pour se présenter -->
+<section id="quisommesnous" class="limite">
+
+    <div class="row">
+        <div class="col-lg-12 mx-auto text-center">
+            <h2>Colette et Remy</h2>
+            <p>Pur Beurre est l'initiative de deux amoureux de la gastronomie française, Colette Tatou et Rémy,
+            que vous avez déjà certainement rencontrés dans notre excellent restaurant Ratatouille.</p>
+        </div>
+    </div>
+    
+    <div class="row">
+    
+        <div class="col-lg-6 text-center">
+            <img src="{% static 'img/colette-portrait.png' %}" height="200">
+            <p>Colette</p>
+        </div>
+   
+        <div class="col-lg-6 text-center">
+            <img src="{% static 'img/remy-portrait.jpg' %}" height="200">
+            <p>Remy</p>
+        </div>
+        
+    </div>
+    
+</section>
+
+<!-- La section pour les coordonnées -->
+<section id="contact" class="limite">
+
+    <div class="row">
+        <div class="col-lg-12 mx-auto text-center">
+            <h2>Contactez-nous!</h2>
+            <p>Nous vous répondrons.</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-6 text-center">
+            <i class="fas fa-phone"></i>
+            <p>01.02.03.04.05</p>
+        </div>
+        <div class="col-lg-6 text-center">
+            <i class="fas fa-envelope"></i>
+            <p>mail@mail.com</p>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

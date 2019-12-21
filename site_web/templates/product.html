@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+ <header class="header_fusion">
+  <img src="{{ product.image_front_url }}" alt="" style="max-height: 300px;">
+  <div class="superposition"><h2>{{ product.product_name_fr }}</h2></div>
+</header> 
+
+<section class="container my-5 py-0">
+    <div class="row">
+    
+        <div class="col-lg-6 text-center">
+            <h3>Nutri-Score :</h3>
+            <img src="{% static 'img/'%}{{product.nutrition_grade_fr|upper}}.png">
+        </div>
+    
+        <div class="col-lg-6">
+            <h3 class="text-center">Repères nutritionnels pour 100g</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sel</th>
+                        <th>Matière grasse</th>
+                        <th>Gras saturé</th>
+                        <th>Sucre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{product.salt}} gr</td>
+                        <td>{{product.fat}} gr</td>
+                        <td>{{product.saturated_fat}} gr</td>
+                        <td>{{product.sugar}} gr</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-6 mx-auto text-center">
+            <a class='btn btn-primary mx-auto' href="{{product.url_product}}" target="_blank">
+                Voir la fiche d'OpenFoodFacts
+            </a>
+            <hr>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-6 mx-auto text-center">
+            <a class='btn btn-primary mx-auto' href="{% url 'substituts' product.id %}">
+                Découvrir des substituts à ce produit
+            </a>
+            <hr>
+        </div>
+    </div>
+    
+    <!-- Possibilité de sauvegarde pour l'user connecté -->
+    {% if user.is_authenticated %}
+    <div class="row">
+        <div class="save-product col-lg-6 mx-auto text-center">
+            <a href="{% url 'sauvegarde' pk=product.id%}">
+                <i class="fas fa-save"></i>
+                Sauvegarder
+            </a>
+            <hr>
+        </div>
+    </div>
+    {% endif %}
+    
+</section>
+
+{% endblock %}

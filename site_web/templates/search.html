@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<header class="text-center">
+    <h2>Résultats</h2>
+</header>
+    
+<section class="container-fluid">
+     
+    
+    <div class="row">
+    
+    {% for product in object_list %}
+
+    <div class="col-lg-4 fiche">
+        <div class="text-center">
+                <img src="{% static 'img/'%}{{product.nutrition_grade_fr|upper}}.png">
+                <img src="{{product.image_front_url}}">
+        </div>
+        <div class="text-center">
+            <a href="{% url 'product' product.id %}">
+            {{ product.product_name_fr }}
+            </a>
+        </div>
+        
+        <!-- Possibilité de sauvegarde pour l'user connecté -->
+        {% if user.is_authenticated %}
+        <div class="text-center">
+            <a href="{% url 'sauvegarde' pk=product.id%}">
+                <i class="fas fa-save"></i>
+                Sauvegarder
+            </a>
+        </div>
+        {% endif %}
+        
+    </div>
+
+
+    {% endfor%}
+    </div>    
+    
+    <!-- En cas de pagination -->
+    {% if is_paginated %}
+    <ul class="pagination">
+
+    {% if page_obj.has_previous %}
+    <a class="btn btn-primary mr-auto" href="{{ request.path }}?product={{ request.GET.product }}&page={{page_obj.previous_page_number}}">Précédent</a>
+    {% endif %}
+    
+    {% if page_obj.has_next %}
+    <a class="btn btn-primary ml-auto" href="{{ request.path }}?product={{ request.GET.product }}&page={{page_obj.next_page_number}}">Suivant</a>
+    {% endif %} 
+    
+    <!-- Sans pagination -->
+    {% endif %}    
+        
+    
+</section>
+
+
+
+{% endblock %}
