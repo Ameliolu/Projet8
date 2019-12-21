@@ -13,8 +13,8 @@ python manage.py migrate
 ```
 python manage.py extraction catégorie
 ```
-Pour cela, commencez par selectionner une catégorie de produits sur openfoodfacts, par exemple les chouquettes (https://fr.openfoodfacts.org/categorie/chouquettes). Dans notre exempe, cela donnerait python manage.py extraction chouquettes.
-```
+Pour cela, commencez par selectionner une catégorie de produits sur openfoodfacts, par exemple les chouquettes (https://fr.openfoodfacts.org/categorie/chouquettes). Dans notre exempe, cela donnerait donc : python manage.py extraction chouquettes.
+
 4) Accessoirement, il est conseillé pour vos développements de créer un profil administrateur avec la commande suivante :
 ```
 python manage.py createsuperuser
