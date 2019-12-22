@@ -75,4 +75,6 @@ class Substituts(ListView):
         return Product.objects.filter(
             category=product.category
         )
-    
+
+def legal(request):
+    return render(request, 'legal.html')        
