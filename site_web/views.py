@@ -70,6 +70,11 @@ class Substituts(ListView):
     template_name = 'substituts.html'
     paginate_by ='6'
     
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['product'] = Product.objects.get(id=self.kwargs['pk'])
+        return context
+    
     def get_queryset(self):
         product = get_object_or_404(Product, pk=self.kwargs['pk'])
         return Product.objects.filter(
