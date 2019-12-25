@@ -41,26 +41,28 @@
                 
                 <!-- Compte utilisateur -->
                 {% if user.is_authenticated %}
-                <li class="nav-item my-auto mx-auto">
+                <li class="nav-item my-auto mx-auto px-2">
                     <a href="{% url 'accounts' %}"><i class="fa fa-user" title="Mon compte"></i></a>
                 </li>
                 
-                <li class="nav-item my-auto mx-auto">
+                <li class="nav-item my-auto mx-auto px-2">
                     <a href="{% url 'choix' %}"><i class="fas fa-carrot" title="Mes aliments"></i></a>
                 </li>
                 
-                <li class="nav-item my-auto mx-auto">
+                <li class="nav-item my-auto mx-auto px-2">
                     <a href="{% url 'deconnexion' %}" id="deconnexion"><i class="fas fa-sign-out-alt" title="Se déconnecter"></i></a>
                 </li>
                 
                 {% else %}
-                <li>
+                
+                <li class="nav-item my-auto mx-auto px-2">
                     <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt" title="Me connecter"></i></a>
                 </li>
                     
-                <li>
+                <li class="nav-item my-auto mx-auto px-2">
                     <a href="{% url 'signup' %}">S'enregister ?</a>
                 </li>
+                
                 {% endif %}
             
             </ul>  
