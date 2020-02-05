@@ -77,4 +77,4 @@ class UserTest(TestCase):
         self.client.login(username="utilisateur_test", password="lEmdPdusi3cle!")
         user_id = User.objects.get(username="utilisateur_test").id
         response = self.client.get('/save/' + '1')
-        self.assertTrue(Sauvegarde.objects.filter(user=user_id).exists())
+        self.assertFalse(Sauvegarde.objects.filter(user=user_id).exists())

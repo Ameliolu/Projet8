@@ -1,0 +1,65 @@
+.fiche {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.limite {
+    border-bottom: 1px solid black;
+}
+
+.image_accueil {
+    opacity: 0.8;
+}
+    
+.header_fusion {
+  position: relative;
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+
+.superposition {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.superposition_barre {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.navbar-default {
+  background-color: rgba(232,167,93, 0.5);
+}
+
+body {
+  background-color: rgba(232,167,93, 0.5);
+}
+
+h1 {
+    /* couleur Rooibos chocolat */
+    color: rgb(196,85,37);
+}
+
+h2 {
+    /* couleur Caramel mou */
+    color: rgb(222,148,64);
+}
+
+h1 {
+    /* couleur Biscuit trempé */
+    color: rgb(232,167,93);
+}
+
+/* <div class="container"> */
+  /* <img src="img_snow_wide.jpg" alt="Snow" style="width:100%;"> */
+  /* <div class="centered">Centered</div> */
+/* </div>  */
