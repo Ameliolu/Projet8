@@ -56,7 +56,7 @@ class UserTest(TestCase):
         self.assertTrue(Product.objects.filter(product_name_fr = "produit_note_a").exists())
         
     def test_search_view(self):
-        """On vérifie que l'url search répond"""
+        """On vérifie que l'url search répond correctement"""
         response = self.client.get('/search/' + "?product=note_a")
         self.assertTemplateUsed(response, 'base.html', 'search.html')
         self.assertEqual(response.status_code, 200)
