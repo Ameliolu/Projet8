@@ -23,7 +23,7 @@ class TestPublicView(TestCase):
 class UserTest(TestCase):
 
     def setUp(self):
-        # création de l'utilisateur
+        # création de l'utilisateur pour voir
         utilisateur_test = User.objects.create(username="utilisateur_test", email="utilisateur_test@mail.com")
         utilisateur_test.set_password('lEmdPdusi3cle!')
         utilisateur_test.save()
