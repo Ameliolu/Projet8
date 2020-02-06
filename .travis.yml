@@ -4,6 +4,9 @@ python:
 
 before_script:
   - pip install -r requirements.txt
+  
+services:
+  - sqlite3
 
 env: DJANGO_SETTINGS_MODULE="pur_beurre.settings"
 
