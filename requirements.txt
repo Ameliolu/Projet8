@@ -9,7 +9,7 @@ pytz==2019.2
 requests==2.20.1
 selenium==3.141.0
 sqlparse==0.3.0
-urllib3==1.24.1
+urllib3==1.26.5
 whitenoise==5.0.1
 django-heroku==0.3.1
 psycopg2==2.8.4
